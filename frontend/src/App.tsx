@@ -2,8 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
 import NavBar from './Components/NavBar'
 import Analysis from './Components/Analysis'
-import Students from './Components/Students'
-import Books from './Components/Books'
+import Students from './Components/Students/Students'
+import Books from './Components/Books/Books'
 
 function App() {
 
