@@ -4,11 +4,13 @@ const bookRoutes = require('./src/routes/bookRoutes');
 const client = require('./src/db/database');
 const cors = require('cors');
 const app = express();
-
+require('dotenv').config();
 app.use(express.json());
 app.use(cors());
-client.connect(()=>{
-    console.log('Connected to database');
+client.connect().then(() => {
+    console.log('Database connected');
+}).catch((err) => {
+    console.error('Error connecting to database:', err);
 });
 
 app.get('/', (res, req)=>{

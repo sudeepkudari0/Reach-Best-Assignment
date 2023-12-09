@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+
+  postgres:
+    image: 'postgres'
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5432:5432'
+    networks:
+      - matchbook
+    
+  backend:
+    build:
+      context: ./backend
+    environment:
+      - DB_USER=postgres
+      - DB_HOST=postgres
+      - DB_NAME=postgres
+      - DB_PASSWORD=postgres
+      - DB_PORT=5432
+    ports:
+      - '3000:3000'
+    depends_on:
+      - postgres
+    networks:
+      - matchbook
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - '5000:5173'
+    depends_on:
+      - backend
+    networks:
+      - matchbook
+
+networks:
+  matchbook:
