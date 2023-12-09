@@ -110,6 +110,7 @@ The frontend of the Book Matching Project is built using Vite and React. It serv
 
 - **Vite**
 - **React**
+- **recharts**
 - **Tailwind CSS**
 - **Shadcn UI**
 
