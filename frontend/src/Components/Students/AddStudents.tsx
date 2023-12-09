@@ -53,7 +53,7 @@ const AddStudents  = () => {
   }
   console.log(newStudent);
   
-  axios.post<students>('http://localhost:3000/api/v1/students', newStudent)
+  axios.post<students>(`http://${process.env.REACT_APP_BACKEND}:3000/api/v1/students`, newStudent)
     .then((res) => {
       console.log(res.data);
     })

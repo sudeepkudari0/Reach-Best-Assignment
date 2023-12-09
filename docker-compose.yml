@@ -30,6 +30,8 @@ services:
   frontend:
     build:
       context: ./frontend
+    environment:
+      - REACT_APP_BACKEND=172.18.0.3
     ports:
       - '5000:5173'
     depends_on:

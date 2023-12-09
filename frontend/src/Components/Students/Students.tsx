@@ -11,7 +11,7 @@ const Students = () => {
 
   useEffect(() => {
     axios
-      .get<students[]>(`http://localhost:3000/api/v1/students`)
+      .get<students[]>(`http://${process.env.REACT_APP_BACKEND}:3000/api/v1/students`)
       .then((res) => {
         const student = res.data;
         setStudents(student);
