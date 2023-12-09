@@ -42,9 +42,11 @@ const Analysis = () => {
   }
 
   useEffect(() => {
-    axios.get(`http://${process.env.REACT_APP_BACKEND}:3000/api/v1/books/${bookID}`)
+    axios.get(`http://${import.meta.env.VITE_BACKEND}:3000/api/v1/books/${bookID}`)
       .then((res) => {
         const book = res.data;
+        console.log(process.env.REACT_APP_BACKEND);
+        
         setBooks(book);
         console.log(res.data);
       })
@@ -53,7 +55,7 @@ const Analysis = () => {
       });
 
       axios
-      .get<students[]>(`http://${process.env.REACT_APP_BACKEND}:3000/api/v1/students/${studentID}`)
+      .get<students[]>(`http://${import.meta.env.VITE_BACKEND}:3000/api/v1/students/${studentID}`)
       .then((res) => {
         const student = res.data;
         setStudents(student);

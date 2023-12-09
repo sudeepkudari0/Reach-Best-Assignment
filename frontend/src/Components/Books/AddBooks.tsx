@@ -53,7 +53,7 @@ const AddBook  = () => {
   }
   console.log(newBook);
   
-  axios.post<books>(`http://${process.env.REACT_APP_BACKEND}:3000/api/v1/books`, newBook)
+  axios.post<books>(`http://${import.meta.env.VITE_BACKEND}:3000/api/v1/books`, newBook)
     .then((res) => {
       console.log(res.data);
     })

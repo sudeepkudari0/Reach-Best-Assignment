@@ -28,7 +28,7 @@ const StudentAnalysis: React.FC<StudentSelectionProps> = ({ onStudentSelect }) =
 
     useEffect(() => {
       axios
-        .get<students[]>(`http://${process.env.REACT_APP_BACKEND}:3000/api/v1/students`)
+        .get<students[]>(`http://${import.meta.env.VITE_BACKEND}:3000/api/v1/students`)
         .then((res) => {
           const student = res.data;
           setStudents(student);

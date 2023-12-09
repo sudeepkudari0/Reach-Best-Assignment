@@ -27,7 +27,7 @@ const BooksSelection: React.FC<BooksSelectionProps> = ({ onBookSelect }) => {
   const [books, setBooks] = React.useState<books[]>([])
 
   useEffect(() => {
-    axios.get(`http://${process.env.REACT_APP_BACKEND}:3000/api/v1/books`)
+    axios.get(`http://${import.meta.env.VITE_BACKEND}:3000/api/v1/books`)
       .then((res) => {
         const book = res.data;
         setBooks(book);

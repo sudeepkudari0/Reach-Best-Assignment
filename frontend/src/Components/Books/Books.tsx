@@ -11,7 +11,7 @@ const Students = () => {
 
   useEffect(() => {
     axios
-      .get<books[]>(`http://${process.env.REACT_APP_BACKEND}:3000/api/v1/books`)
+      .get<books[]>(`http://${import.meta.env.VITE_BACKEND}:3000/api/v1/books`)
       .then((res) => {
         const book = res.data;
         setBooks(book);
