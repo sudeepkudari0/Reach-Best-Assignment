@@ -25,11 +25,11 @@ const Students = () => {
   return (
     <>
 
-      <div className='flex flex-row items-center justify-center m-5 sm:w-full flex-col '>
+      <div className='flex flex-col items-center justify-center m-5 sm:flex-row'>
         <div>
-          <h1 className='text-3xl text-black ml-10'>Books List</h1>
+          <h1 className='text-3xl text-black'>Books List</h1>
 
-          <table className='w-[700px] mt-2 text-[20px]'>
+          <table className='w-full mt-2 text-[20px] sm:w-[700px]'>
             <thead>
               <tr className='text-black'>
                 <th>Book Name</th>
@@ -58,7 +58,7 @@ const Students = () => {
           </table>
         </div>
 
-        <div className='flex flex-row h-[100px] m-5 relative bottom-14 sm:bottom-0'>
+        <div className='flex flex-row h-[100px] m-5 relative'>
           <AddBooks />
         </div>
       </div>
