@@ -44,9 +44,7 @@ const Analysis = () => {
   useEffect(() => {
     axios.get(`http://${import.meta.env.VITE_BACKEND}:3000/api/v1/books/${bookID}`)
       .then((res) => {
-        const book = res.data;
-        console.log(process.env.REACT_APP_BACKEND);
-        
+        const book = res.data;        
         setBooks(book);
         console.log(res.data);
       })

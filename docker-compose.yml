@@ -31,7 +31,7 @@ services:
     build:
       context: ./frontend
     environment:
-      - VITE_BACKEND=backend
+      - VITE_BACKEND=
     ports:
       - '5000:5173'
     depends_on:

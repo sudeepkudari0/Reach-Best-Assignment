@@ -1,35 +1,13 @@
-# from node:18-alpine
+from node:18-alpine
 
-# workdir /app
+workdir /app
 
-# copy package.json ./
+copy package.json ./
 
-# run npm install
+run npm install
 
-# copy . .
+copy . .
 
-# expose 5000
+expose 5000
 
-# cmd ["npm", "run", "dev"]
-
-FROM node:18-alpine as build
-
-WORKDIR /app
-
-COPY package*.json ./
-
-RUN npm install
-
-COPY . .
-
-RUN npm run build
-
-FROM nginx:alpine
-
-COPY --from=build /app/dist /usr/share/nginx/html
-
-COPY nginx/nginx.conf /etc/nginx/nginx.conf
-
-EXPOSE 80
-
-CMD ["nginx", "-g", "daemon off;"]
+cmd ["npm", "run", "dev"]
